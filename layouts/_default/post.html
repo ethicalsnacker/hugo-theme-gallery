@@ -1,0 +1,25 @@
+{{ define "main" }}
+{{- partial "title.html" . -}}
+
+
+<html>
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Document</title>
+     
+</head>
+<body>
+     <div style="margin:25px;">
+          <div style="color:rgb(228, 0, 0); font-size:16px; text-align: center;">{{ dateFormat "Monday, Jan 2, 2006" .Date }}</div>
+          <div style="color:rgb(253, 0, 0); font-size:16px;">{{if .Params.author}}Author: {{.Params.Author}}{{end}}</div>
+          <div class="mt-8 mb-16 px-6 prose prose-neutral mx-auto max-w-screen-md dark:prose-invert">
+            {{ .Content }}
+          </div>
+     </div>
+     {{ partial "footer" . }}
+</body>
+</html>
+
+{{ end }}
